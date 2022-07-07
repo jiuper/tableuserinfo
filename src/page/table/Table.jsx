@@ -3,10 +3,9 @@ import { ButtonPaginatoin } from '../../component/otherButtons/ButtonPaginatoin'
 import { Item } from './Item'
 import { ItemsList } from './ItemsList'
 import './Table.css'
+import propTypes from 'prop-types'
 
-export const Table = ({user}) => {
-
-
+export const Table = ({ user, setProfile }) => {
 
   return (
     <div className='table'>
@@ -23,11 +22,12 @@ export const Table = ({user}) => {
       <div className='table__body'>
         <ItemsList
           user={user}
+          setProfile={setProfile}
         />
       </div>
       <div className='pagination'>
         <ButtonPaginatoin path={'/Home'}>
-          Back
+          Home
         </ButtonPaginatoin>
         <ButtonPaginatoin path={'/SighUp'}>
           Add new user
@@ -35,4 +35,29 @@ export const Table = ({user}) => {
       </div>
     </div>
   )
+}
+
+Table.propTypes = {
+  user: propTypes.arrayOf(propTypes.shape({
+    id: propTypes.oneOfType([propTypes.number, propTypes.string]),
+    name: propTypes.string,
+    surname: propTypes.string,
+    age: propTypes.number,
+    nationality: propTypes.string,
+    married: propTypes.string
+  })),
+  setProfile: propTypes.func,
+}
+
+Table.defaultProps = {
+  user: [
+    {
+      id: Date.now(),
+      name: 'Maria',
+      surname: 'Pechan',
+      age: 28,
+      nationality: 'belka',
+      married: 'married'
+    }
+  ]
 }

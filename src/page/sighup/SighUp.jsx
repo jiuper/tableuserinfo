@@ -25,7 +25,7 @@ export const SighUp = ({ user, setUser }) => {
       />
       <div className='pagination'>
         <ButtonPaginatoin path={'/Home'}>
-          Back
+          Home
         </ButtonPaginatoin>
         <ButtonPaginatoin path={'/Table'}>
           Table

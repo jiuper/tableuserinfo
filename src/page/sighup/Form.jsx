@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from '../../component/input/Input'
-import { ButtonAdd } from '../../component/otherButtons/ButtonAdd'
+import { ButtonAction } from '../../component/otherButtons/ButtonAction'
 import { addNewUser, handleAction } from './function'
 export const Form = ({ user, setUser, newUser, setNewUser }) => {
     return (
@@ -48,15 +48,15 @@ export const Form = ({ user, setUser, newUser, setNewUser }) => {
                 />
             </div>
             <div className='form__button'>
-                <ButtonAdd
+                <ButtonAction
                     user={user}
                     newUser={newUser}
                     setUser={setUser}
                     setNewUser={setNewUser}
-                    addNewUser={addNewUser}
+                    handleAction={addNewUser}
                 >
                     Add User
-                </ButtonAdd>
+                </ButtonAction>
             </div>
         </>
     )

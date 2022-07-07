@@ -36,6 +36,8 @@ export const App = () => {
     }
   ])
 
+  const [profile, setProfile] = useState({})
+
   return (
     <>
       <Routes>
@@ -43,15 +45,21 @@ export const App = () => {
         <Route path='/Table/*' element={
           <Table
             user={user}
+            setProfile={setProfile}
           />} />
         <Route path='/SighUp/*' element={
           <SighUp
             user={user}
             setUser={setUser}
           />} />
-        <Route path='/User/*' element={<User />} />
+        <Route path='/User/*' element={
+          <User
+            user={user}
+            setUser={setUser}
+            setProfile={setProfile}
+            profile={profile}
+          />} />
       </Routes>
     </>
   );
 }
-
