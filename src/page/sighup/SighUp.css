@@ -1,0 +1,14 @@
+.form{
+    display: grid;
+    grid-gap: 20px;
+}
+
+.form__items{
+    display: grid;
+    justify-items: center;
+}
+
+.form__button{
+    display: grid;
+    justify-items: center;
+}

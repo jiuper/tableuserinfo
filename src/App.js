@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { Table } from './page/table/Table';
+import { SighUp } from './page/sighup/SighUp';
+import { User } from './page/user/User';
+import { Home } from './page/home/Home';
 
-function App() {
+export const App = () => {
+
+  const [user, setUser] = useState([
+    {
+      id: Date.now() + 1,
+      name: 'Kirill',
+      surname: 'Pechan',
+      age: 26,
+      nationality: 'Belarusion',
+      married: 'married'
+    },
+    {
+      id: Date.now() + 2,
+      name: 'Alex',
+      surname: 'Koval',
+      age: 25,
+      nationality: 'Belarusion',
+      married: 'single'
+    },
+    {
+      id: Date.now() + 3,
+      name: 'Alexsandr',
+      surname: 'Lukashenco',
+      age: 68,
+      nationality: 'Belarusion',
+      married: 'single'
+    }
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/*' element={<Home />} />
+        <Route path='/Table/*' element={
+          <Table
+            user={user}
+          />} />
+        <Route path='/SighUp/*' element={
+          <SighUp
+            user={user}
+            setUser={setUser}
+          />} />
+        <Route path='/User/*' element={<User />} />
+      </Routes>
+    </>
   );
 }
 
-export default App;

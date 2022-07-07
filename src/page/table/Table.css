@@ -1,0 +1,17 @@
+.table{
+    display: grid;
+    grid-gap: 20px;
+}
+
+.table__item{
+    display: grid;
+    grid-template-columns: repeat(5,100px);
+    justify-content: center;
+}
+
+.table__item span{
+    border: 1px solid;
+    align-items: center;
+    text-align: center;
+}
+
