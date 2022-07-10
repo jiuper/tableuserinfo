@@ -1,17 +1,22 @@
 import React from 'react'
-import { ButtonPaginatoin } from '../../component/otherButtons/ButtonPaginatoin'
+import { NavLink } from 'react-router-dom'
 import { ButtonRemove } from '../../component/otherButtons/ButtonRemove'
+import { useParams } from 'react-router-dom'
 import './User.css'
 export const User = ({ user, profile, setUser, setProfile }) => {
 
+  const { name } = useParams()
+
   return (
     <div className='profile'>
+
+      {
+        user.filter(e => e.id === name)
+      }
       <div className='profile__item' id={profile.id}>
         <span>{profile.name}</span>
         <span>{profile.surname}</span>
         <span>{profile.age}</span>
-        <span>{profile.nationality}</span>
-        <span>{profile.married}</span>
       </div>
       <div className='profile__button'>
         <ButtonRemove
@@ -24,12 +29,7 @@ export const User = ({ user, profile, setUser, setProfile }) => {
         </ButtonRemove>
       </div>
       <div className='pagination'>
-        <ButtonPaginatoin path={'/Home'}>
-          Home
-        </ButtonPaginatoin>
-        <ButtonPaginatoin path={'/Table'}>
-          Table
-        </ButtonPaginatoin>
+        <NavLink to={'/Table'}>Table</NavLink>
       </div>
     </div>
   )

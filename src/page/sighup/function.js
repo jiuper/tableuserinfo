@@ -8,11 +8,11 @@ export const addNewUser = (arr, value, setUser, setNewUser) => {
         ...value,
         id: Date.now()
     }
-    if (value.name === '' || value.surname === '' || value.age === '' || value.login === '' || value.password === '') {
+    if (value.name === '' || value.surname === '' || value.age === '') {
         alert('Вы не заполили поля')
     } else {
         setUser([...arr, newUser])
         alert('Вы успешно зарегистрировались')
-        setNewUser({ name: '', surname: '', age: '', nationality: '', married: '' })
+        setNewUser({ name: '', surname: '', age: '' })
     }
 }

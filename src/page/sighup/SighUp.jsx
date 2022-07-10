@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { ButtonPaginatoin } from '../../component/otherButtons/ButtonPaginatoin'
+import { NavLink } from 'react-router-dom'
 import './SighUp.css'
 import { Form } from './Form'
 export const SighUp = ({ user, setUser }) => {
@@ -10,8 +10,6 @@ export const SighUp = ({ user, setUser }) => {
       name: '',
       surname: '',
       age: '',
-      nationality: '',
-      married: ''
     }
   )
 
@@ -24,12 +22,7 @@ export const SighUp = ({ user, setUser }) => {
         setUser={setUser}
       />
       <div className='pagination'>
-        <ButtonPaginatoin path={'/Home'}>
-          Home
-        </ButtonPaginatoin>
-        <ButtonPaginatoin path={'/Table'}>
-          Table
-        </ButtonPaginatoin>
+        <NavLink to={'/Table'}>Back</NavLink>
       </div>
     </div>
   )

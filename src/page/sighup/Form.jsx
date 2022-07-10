@@ -30,22 +30,6 @@ export const Form = ({ user, setUser, newUser, setNewUser }) => {
                     setValue={setNewUser}
                     handleAction={handleAction}
                 />
-                <Input
-                    nameTitle={'nationality'}
-                    value={newUser.nationality}
-                    user={newUser}
-                    nameUserTitle={'nationality'}
-                    setValue={setNewUser}
-                    handleAction={handleAction}
-                />
-                <Input
-                    nameTitle={'married'}
-                    value={newUser.married}
-                    user={newUser}
-                    nameUserTitle={'married'}
-                    setValue={setNewUser}
-                    handleAction={handleAction}
-                />
             </div>
             <div className='form__button'>
                 <ButtonAction

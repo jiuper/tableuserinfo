@@ -3,9 +3,8 @@ import './App.css';
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Table } from './page/table/Table';
-import { SighUp } from './page/sighup/SighUp';
+import { SighUp } from "./page/sighup/SighUp";
 import { User } from './page/user/User';
-import { Home } from './page/home/Home';
 
 export const App = () => {
 
@@ -14,25 +13,19 @@ export const App = () => {
       id: Date.now() + 1,
       name: 'Kirill',
       surname: 'Pechan',
-      age: 26,
-      nationality: 'Belarusion',
-      married: 'married'
+      age: 26
     },
     {
       id: Date.now() + 2,
       name: 'Alex',
       surname: 'Koval',
-      age: 25,
-      nationality: 'Belarusion',
-      married: 'single'
+      age: 25
     },
     {
       id: Date.now() + 3,
       name: 'Alexsandr',
       surname: 'Lukashenco',
-      age: 68,
-      nationality: 'Belarusion',
-      married: 'single'
+      age: 68
     }
   ])
 
@@ -41,8 +34,7 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/*' element={<Home />} />
-        <Route path='/Table/*' element={
+        <Route path='/:name' element={
           <Table
             user={user}
             setProfile={setProfile}

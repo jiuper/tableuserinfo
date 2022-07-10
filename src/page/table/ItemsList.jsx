@@ -10,8 +10,6 @@ export const ItemsList = ({ user, setProfile }) => {
             name={elem.name}
             surname={elem.surname}
             age={elem.age}
-            nationality={elem.nationality}
-            married={elem.married}
             setProfile={setProfile}
             user={user}
         />
@@ -29,8 +27,6 @@ ItemsList.propTypes = {
         name: propTypes.string,
         surname: propTypes.string,
         age: propTypes.number,
-        nationality: propTypes.string,
-        married: propTypes.string
     })),
     setAccounts: propTypes.func
 }
@@ -42,7 +38,5 @@ ItemsList.defaultProps = {
             name: 'Maria',
             surname: 'Pechan',
             age: 28,
-            nationality: 'belka',
-            married: 'married'
         }]
 }
