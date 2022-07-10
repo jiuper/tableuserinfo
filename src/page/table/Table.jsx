@@ -1,31 +1,26 @@
 import React from 'react'
-import { Item } from './Item'
 import { ItemsList } from './ItemsList'
 import { NavLink } from 'react-router-dom'
 import './Table.css'
 import propTypes from 'prop-types'
 
-export const Table = ({ user, setProfile }) => {
+export const Table = ({ user }) => {
 
   return (
     <div className='table'>
       <div className='table__head'>
-        <Item
-          id={123}
-          name='name'
-          surname='surname'
-          age='age'
-        />
+        <span>name</span>
+        <span>surname</span>
+        <span>age</span>
       </div>
       <div className='table__body'>
         <ItemsList
           user={user}
-          setProfile={setProfile}
         />
       </div>
+
       <div className='pagination'>
         <NavLink to={'/SighUp'}>Add new user</NavLink>
-        <NavLink to={'/User'}>Info User</NavLink>
       </div>
     </div>
   )

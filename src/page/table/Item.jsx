@@ -1,13 +1,16 @@
 import React from 'react'
-import { handleProfile } from '../user/function'
 import propTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-export const Item = ({ id, name, surname, age, setProfile, user }) => {
+export const Item = ({ id, name, surname, age}) => {
+    
     return (
-        <div className='table__item' key={id} onClick={()=> handleProfile(id, setProfile,user ) }>
+        <div className='table__item' key={id} >
+            <Link to={`/${id}`}>
             <span>{name}</span>
             <span>{surname}</span>
             <span>{age}</span>
+            </Link>
         </div>
     )
 }

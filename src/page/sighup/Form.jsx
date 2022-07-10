@@ -10,7 +10,6 @@ export const Form = ({ user, setUser, newUser, setNewUser }) => {
                     nameTitle={'name'}
                     value={newUser.name}
                     user={newUser}
-                    nameUserTitle={'name'}
                     setValue={setNewUser}
                     handleAction={handleAction}
                 />
@@ -18,7 +17,6 @@ export const Form = ({ user, setUser, newUser, setNewUser }) => {
                     nameTitle={'surname'}
                     value={newUser.surname}
                     user={newUser}
-                    nameUserTitle={'surname'}
                     setValue={setNewUser}
                     handleAction={handleAction}
                 />
@@ -26,7 +24,6 @@ export const Form = ({ user, setUser, newUser, setNewUser }) => {
                     nameTitle={'age'}
                     value={newUser.age}
                     user={newUser}
-                    nameUserTitle={'age'}
                     setValue={setNewUser}
                     handleAction={handleAction}
                 />

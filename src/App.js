@@ -3,7 +3,7 @@ import './App.css';
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Table } from './page/table/Table';
-import { SighUp } from "./page/sighup/SighUp";
+import { SighUp } from './page/sighup/SighUp';
 import { User } from './page/user/User';
 
 export const App = () => {
@@ -29,27 +29,22 @@ export const App = () => {
     }
   ])
 
-  const [profile, setProfile] = useState({})
-
   return (
     <>
       <Routes>
-        <Route path='/:name' element={
+        <Route path='/' element={
           <Table
             user={user}
-            setProfile={setProfile}
           />} />
         <Route path='/SighUp/*' element={
           <SighUp
             user={user}
             setUser={setUser}
           />} />
-        <Route path='/User/*' element={
+        <Route path='/:id' element={
           <User
             user={user}
             setUser={setUser}
-            setProfile={setProfile}
-            profile={profile}
           />} />
       </Routes>
     </>

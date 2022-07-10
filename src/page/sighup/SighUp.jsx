@@ -22,7 +22,7 @@ export const SighUp = ({ user, setUser }) => {
         setUser={setUser}
       />
       <div className='pagination'>
-        <NavLink to={'/Table'}>Back</NavLink>
+        <NavLink to={'/'}>Back</NavLink>
       </div>
     </div>
   )

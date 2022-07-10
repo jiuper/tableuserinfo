@@ -2,21 +2,25 @@ import React from 'react'
 import { Item } from './Item'
 import propTypes from 'prop-types'
 
-export const ItemsList = ({ user, setProfile }) => {
-    let tableUser = user.map(elem =>
-        <Item
-            key={elem.id}
-            id={elem.id}
-            name={elem.name}
-            surname={elem.surname}
-            age={elem.age}
-            setProfile={setProfile}
-            user={user}
-        />
-    )
+
+export const ItemsList = ({ user }) => {
+
     return (
         <>
-            {tableUser}
+            {
+                    user.length !== 0
+                    ?  user.map(elem =>
+                        <Item
+                            key={elem.id}
+                            id={elem.id}
+                            name={elem.name}
+                            surname={elem.surname}
+                            age={elem.age}
+                            user={user} 
+                        />
+                    )
+                    : <div>No found</div>
+            }
         </>
     )
 }
