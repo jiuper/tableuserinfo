@@ -1,37 +1,26 @@
 import React from 'react'
-import { ButtonPaginatoin } from '../../component/otherButtons/ButtonPaginatoin'
-import { Item } from './Item'
 import { ItemsList } from './ItemsList'
+import { NavLink } from 'react-router-dom'
 import './Table.css'
 import propTypes from 'prop-types'
 
-export const Table = ({ user, setProfile }) => {
+export const Table = ({ user }) => {
 
   return (
     <div className='table'>
       <div className='table__head'>
-        <Item
-          id={123}
-          name='name'
-          surname='surname'
-          age='age'
-          nationality='nationality'
-          married='married'
-        />
+        <span>name</span>
+        <span>surname</span>
+        <span>age</span>
       </div>
       <div className='table__body'>
         <ItemsList
           user={user}
-          setProfile={setProfile}
         />
       </div>
+
       <div className='pagination'>
-        <ButtonPaginatoin path={'/Home'}>
-          Home
-        </ButtonPaginatoin>
-        <ButtonPaginatoin path={'/SighUp'}>
-          Add new user
-        </ButtonPaginatoin>
+        <NavLink to={'/SighUp'}>Add new user</NavLink>
       </div>
     </div>
   )
@@ -43,8 +32,6 @@ Table.propTypes = {
     name: propTypes.string,
     surname: propTypes.string,
     age: propTypes.number,
-    nationality: propTypes.string,
-    married: propTypes.string
   })),
   setProfile: propTypes.func,
 }
@@ -56,8 +43,6 @@ Table.defaultProps = {
       name: 'Maria',
       surname: 'Pechan',
       age: 28,
-      nationality: 'belka',
-      married: 'married'
     }
   ]
 }

@@ -1,15 +1,16 @@
 import React from 'react'
-import { handleProfile } from '../user/function'
 import propTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-export const Item = ({ id, name, surname, age, nationality, married, setProfile, user }) => {
+export const Item = ({ id, name, surname, age}) => {
+    
     return (
-        <div className='table__item' key={id} onClick={()=> handleProfile(id, setProfile,user ) }>
+        <div className='table__item' key={id} >
+            <Link to={`/${id}`}>
             <span>{name}</span>
             <span>{surname}</span>
             <span>{age}</span>
-            <span>{nationality}</span>
-            <span>{married}</span>
+            </Link>
         </div>
     )
 }
@@ -20,8 +21,6 @@ Item.propTypes = {
         name: propTypes.string,
         surname: propTypes.string,
         age: propTypes.number,
-        nationality: propTypes.string,
-        married: propTypes.string
     })),
     setAccounts: propTypes.func
 }
@@ -33,7 +32,5 @@ Item.defaultProps = {
             name: 'name',
             surname: 'surname',
             age: 'age',
-            nationality: 'nationality',
-            married: 'married'
         }]
 }

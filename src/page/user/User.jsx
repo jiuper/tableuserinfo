@@ -1,36 +1,43 @@
 import React from 'react'
-import { ButtonPaginatoin } from '../../component/otherButtons/ButtonPaginatoin'
+import { NavLink } from 'react-router-dom'
 import { ButtonRemove } from '../../component/otherButtons/ButtonRemove'
+import { useParams } from 'react-router-dom'
 import './User.css'
-export const User = ({ user, profile, setUser, setProfile }) => {
+export const User = ({ user, setUser }) => {
+
+  const param = useParams()
 
   return (
-    <div className='profile'>
-      <div className='profile__item' id={profile.id}>
-        <span>{profile.name}</span>
-        <span>{profile.surname}</span>
-        <span>{profile.age}</span>
-        <span>{profile.nationality}</span>
-        <span>{profile.married}</span>
-      </div>
-      <div className='profile__button'>
-        <ButtonRemove
-          value={profile.id}
-          user={user}
-          setUser={setUser}
-          setProfile={setProfile}
-        >
-          Удалить
-        </ButtonRemove>
-      </div>
+    <>
+      {
+         user.filter(e => e.id === Number(param.id))
+          .map(
+            e => (
+              <div className='profile' key={e.id}>
+                <div className='profile__item' >
+                  <span>{e.name}</span>
+                  <span>{e.surname}</span>
+                  <span>{e.age}</span>
+                </div>
+                <div className='profile__button'>
+                  <ButtonRemove
+                    user={user}
+                    setUser={setUser}
+                    value={e.id}
+                    param={param.id}
+                  >
+                    Удалить
+                  </ButtonRemove>
+                </div>
+              </div>
+            )
+          )
+        
+      }
+
       <div className='pagination'>
-        <ButtonPaginatoin path={'/Home'}>
-          Home
-        </ButtonPaginatoin>
-        <ButtonPaginatoin path={'/Table'}>
-          Table
-        </ButtonPaginatoin>
+        <NavLink to={'/'}>Back</NavLink>
       </div>
-    </div>
+    </>
   )
 }
