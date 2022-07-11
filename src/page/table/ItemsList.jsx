@@ -8,18 +8,18 @@ export const ItemsList = ({ user }) => {
     return (
         <>
             {
-                    user.length !== 0
-                    ?  user.map(elem =>
+                user.length !== 0
+                    ? user.map(elem =>
                         <Item
                             key={elem.id}
                             id={elem.id}
                             name={elem.name}
                             surname={elem.surname}
                             age={elem.age}
-                            user={user} 
+                            user={user}
                         />
                     )
-                    : <div>No found</div>
+                    : <div style={{ color: 'red', fontSize: '20px', fontWeight: 'bold', margin: '0 auto' }}>No found</div>
             }
         </>
     )

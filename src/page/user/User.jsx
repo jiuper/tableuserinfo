@@ -10,17 +10,16 @@ export const User = ({ user, setUser }) => {
   const [error, setError] = useState(null)
 
   return (
-    <>
+    <div className='profile'>
       {
         user.filter(e => e.id === Number(param.id))
           .map(
             e => (
-              <div className='profile' key={e.id}>
+              <div className='profile__user' key={e.id}>
                 <div className='profile__item' >
                   <span>{e.name}</span>
                   <span>{e.surname}</span>
                   <span>{e.age}</span>
-
                 </div>
                 <div className='profile__button'>
                   <ButtonRemove
@@ -32,14 +31,15 @@ export const User = ({ user, setUser }) => {
                     Удалить
                   </ButtonRemove>
                 </div>
+
               </div>
             )
           )
       }
-      {error}
+      <div style={{color : 'red', fontSize: '20px', fontWeight: 'bold', margin: '0 auto' }}>{error}</div>
       <div className='pagination'>
         <NavLink to={'/'}>Back</NavLink>
       </div>
-    </>
+    </div>
   )
 }
