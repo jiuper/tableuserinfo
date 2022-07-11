@@ -30,7 +30,7 @@ export const App = () => {
   ])
 
   return (
-    <>
+    <div className='wrapper'>
       <Routes>
         <Route path='/' element={
           <Table
@@ -44,9 +44,10 @@ export const App = () => {
         <Route path='/:id' element={
           <User
             user={user}
+            value={user.id}
             setUser={setUser}
           />} />
       </Routes>
-    </>
+    </div>
   );
 }
