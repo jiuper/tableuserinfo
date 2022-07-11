@@ -2,3 +2,22 @@
   display: flex;
   justify-content: space-evenly;
 }
+.pagination a {
+  text-decoration: none;
+  background: #f6cbae;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0px 0px 7px 1px #b6b6b6;
+}
+.button__style {
+  background: #C38D9E;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0px 0px 7px 1px #b6b6b6;
+}
+.wrapper {
+  margin-top: 100px;
+}

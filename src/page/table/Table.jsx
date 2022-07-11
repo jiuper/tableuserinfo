@@ -9,9 +9,9 @@ export const Table = ({ user }) => {
   return (
     <div className='table'>
       <div className='table__head'>
-        <span>name</span>
-        <span>surname</span>
-        <span>age</span>
+        <span>Name</span>
+        <span>Surname</span>
+        <span>Age</span>
       </div>
       <div className='table__body'>
         <ItemsList
